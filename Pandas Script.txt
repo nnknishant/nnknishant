@@ -1,0 +1,205 @@
+import numpy as np
+import pandas as pd
+
+dict1 = {
+	"name":['Nishant', 'Rohan', 'Sunny', 'Mickey'],
+	"Age":[25, 35, 36, 26],
+	"City": ['Kolkata','Mumbai', 'Dehradun', 'Lucknow']
+}
+df = pd.Dataframe(dict1)
+
+df
+
+How to create a CSV file from Jupyter notebook
+df.to_csv('students.csv')
+
+If do not want to show the index then 
+df.to_csv('students.csv', index = False)
+
+df.head(2)
+df.tail(2)
+To check the statistical analysis
+
+df.describe()
+
+If we create CSV file in our local folder for import in jupyter note book
+
+Nishant = pd.read_csv('Pandas')
+Nishant
+
+Nishant['City']
+If we write
+
+Nishant['City'] [0] here 0 is index
+Nishant['City'] [0] = 'Patna' here we can chage the value
+then 
+
+Nishant
+
+Again to import the changes value in csv so
+Nishant.to_csv('Pandas.csv')
+
+If changes the Index name
+
+Nishant.index = ['First', 'Second', Third, 'Fourth']
+
+Nishant
+
+Create series in pandas
+
+Ser = pd.series(np.random.rand)
+Ser
+
+If we write 50 here in series
+
+Ser = pd.series(np.random.rand(50))
+Ser
+
+type(Ser)
+
+Create new dataframe
+
+Newdf = pd.DataFrame(np.random.rand(224,10), index = np.arange(224))
+pd.head()
+
+Newdf.head()
+ type(Newdf)
+
+Newdf.describe()
+
+Newdf.dtypes()
+
+Changes the index
+
+Newdf[0][0] = "Nishant" so datatype cahges in object, lets see
+
+Newdf.dtypes()
+
+Newdf.head()
+
+Now print the Index
+
+Newdf.index
+
+Newdf.columns
+
+Convert into numpy array so
+
+Newdf.to_numpy()
+
+For Transpose
+
+Newdf.T
+
+Use sort index function
+
+Newdf.sort_index(axis = 0, ascending = false)
+
+Newdf.sort_index(axis = 1, ascending = false)
+
+
+Newdf.head()
+Newdf[0]
+ for check the Type
+
+type(Newdf[0])
+
+If we set the 0 in rows and colum so we use here
+
+Newdf.loc[0,0] = 765
+
+Newdf.head()
+
+Newdf.columns = list("ABCDE") for string
+
+Newdf
+
+Newdf.loc[0,'A'] = 76566
+
+ for changes the numbers
+
+Newdf.head()
+
+Use Drop here for remove the column
+
+Newdf.drop(0, axis = 1)
+
+axis1 = column
+axis0 = row
+
+Newdf.loc[[1,2],['C', 'D']]
+
+see all rows
+
+Newdf.loc[:, ['C', 'D']]
+
+see all columns
+
+Newdf.loc[[1,2],:]
+
+Now run complex querries in pandas
+
+Newdf.loc[(Newdf['A']<0.3)]
+
+and add one condition
+
+Newdf.loc[(Newdf['A']<0.3), & (Newdf['C']>0.2)]
+
+Newdf.iloc[0,5]
+
+Newdf.iloc[[0,5], [1,2]]
+
+If we drop the rows
+
+Newdf.drop([0])
+
+If drop column
+
+Newdf.drop(['A'], axis = 1)
+
+(but our datafram is same because we didnt put here Newdf = any object, This is just copy not change in dataframe )
+
+If see  again the dataframe
+
+Newdf.head()
+Inplace function
+
+Newdf.drop(['A'], axis = 1, inplace = True)
+Newdf
+
+Newdf.drop([1,5], axis =1, inplace = True) so here  rows 1 will be remeoved
+
+if check
+Newdf.head(3)
+
+If again need same data
+
+Newdf.reset_index() but they add one more column if we not require the another column so
+
+Newdf.reset_index(drop = True, inplace = True)
+
+newdf['B'].isnull() this return the null values if any where in dataframe
+
+If set the values use loc funtion
+
+Newdf.loc[:, ['B']] = 56
+Newdf
+
+Newdf.shape
+Newdf.info()
+
+Newdf.notnull()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
